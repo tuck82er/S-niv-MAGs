@@ -1,0 +1,5 @@
+study_accession	sample_accession	tax_id	run_accession	scientific_name	instrument_model	library_layout	read_count	base_count	experiment_title	study_title	sample_alias	sample_title	sample_origin
+PRJNA766694	C_M6	1300146	C_M6	s. nivaloides metagenome	Illumina Novoseq 6000	PAIRED	20637207	3116218257	Illumina Novoseq 6000 paired end sequencing; environmental samples	Sanguina nivaloides associated microbial community 	C_M6	C_M6	Cascades
+PRJNA766694	C_M8	1300146	C_M8	s. nivaloides metagenome	Illumina Novoseq 6000	PAIRED	15943851	2407521501	Illumina Novoseq 6000 paired end sequencing; environmental samples	Sanguina nivaloides associated microbial community 	C_M8	C_M8	Cascades
+PRJNA766694	R_M2	1300146	R_M2	s. nivaloides metagenome	Illumina Novoseq 6000	PAIRED	20196453	3049664403	Illumina Novoseq 6000 paired end sequencing; environmental samples	Sanguina nivaloides associated microbial community 	R_M2	R_M2	Rockies
+PRJNA766694	S_M1	1300146	S_M1	s. nivaloides metagenome	Illumina Novoseq 6000	PAIRED	19508133	2945728083	Illumina Novoseq 6000 paired end sequencing; environmental samples	Sanguina nivaloides associated microbial community 	S_M1	S_M1	Svalbard

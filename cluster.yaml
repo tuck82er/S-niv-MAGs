@@ -1,0 +1,91 @@
+__default__:
+    system: 'slurm' #check if system is defined below
+    account: etucker5 #required
+    time: 120 # minutes
+    mem: 10 # GB
+    threads: 8
+    queue: computeq # required
+    nodes: 1
+    command_options:
+        slurm:
+            command: "sbatch --parsable --qos=unlim"
+            key_mapping:
+            name: "--job-name={}"
+            threads: "-n {}"
+            mem: "--mem={}g"
+            account: "--account={}"
+            queue: "--partition={}"
+            time: "--time={}"
+            nodes: "-N {}"      # ntasks: 24
+
+fastqc: 
+    queue: computeq
+    threads: 1
+    mem: 1
+    time: 720
+
+fastqc_trimmed: 
+    queue: computeq
+    threads: 1
+    mem: 1
+    time: 720
+
+trimmomatic:
+    queue: computeq
+    threads: 6
+    mem: 24
+    time: 720
+
+compute_sigs:
+    queue: computeq
+    mem: 4
+    time: 2800
+    threads: 2
+
+megahit_assembly:
+    queue: bigmemq
+    time: 10080 
+    mem: 500
+    threads: 36
+
+bwa_index:
+    queue: computeq 
+    time: 1440
+    mem: 16
+    threads: 2 
+
+bwa_mem: 
+    queue: computeq
+    time: 1440
+    mem: 16
+    threads: 8
+
+metabat_abundance:
+    queue: computeq
+    time: 720
+    mem: 18
+    threads: 16
+
+metabat_binning:
+    queue: computeq
+    time: 720
+    mem: 32
+    threads: 16
+
+metabat_binning_euk:
+    queue: computeq
+    time: 720
+    mem: 32
+    threads: 16
+
+eukrep:
+    queue: computeq
+    time: 600
+    mem: 8
+    threads: 2
+
+prodigal:
+    queue: computeq
+    time: 2400
+    mem: 16 
+    threads: 1

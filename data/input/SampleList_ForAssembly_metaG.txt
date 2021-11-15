@@ -1,0 +1,2 @@
+Sub_region	Zone	Count	ERR_list	Assembly_group
+NA	M	4	C_M6, C_M8, R_M2, S_M1	NA-all-M
