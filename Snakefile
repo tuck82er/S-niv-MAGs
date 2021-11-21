@@ -92,7 +92,8 @@ rule all:
         #METABAT2
         jgi_abund = expand("{base}/metabat2/{assembly_group}/jgi_abund.txt", base = OUTPUTDIR, assembly_group = METAG_ASSEMBLYGROUP),
         metabat2_bins = expand("{base}/metabat2/{assembly_group}/{assembly_group}_bin", base = OUTPUTDIR, assembly_group = METAG_ASSEMBLYGROUP),
-        #CONCOCT
+        
+	#CONCOCT
 
         #EUKREP
         eukrep =  expand("{base}/eukrep/{assembly_group}/euk.final.contigs.fa", base = OUTPUTDIR, assembly_group = METAG_ASSEMBLYGROUP),
@@ -342,4 +343,22 @@ rule prodigal:
     shell:
         """
         prodigal -i {input.assembly} -f gff -o {output.genes} -a {output.proteins} -p meta
+        """
+
+rule concoct_binning:
+    input:
+	assembly = OUTPUTDIR + "/megahit/{assembly_group}/final.contigs.fa",
+        depth = OUTPUTDIR + "/metabat2/{assembly_group}/jgi_abund.txt"
+    output:
+	OUTPUTDIR + "/metabat2/{assembly_group}/{assembly_group}_bin"
+    conda:
+         "envs/metabat-env.yaml"
+    params:
+	other = "--saveCls",
+        threads = 8
+    log:
+        OUTPUTDIR + "/logs/metabat2/{assembly_group}.bin.log"
+    shell:
+	"""
+	metabat2 {params.other} --numThreads {params.threads} -i {input.assembly} -a {input.depth} -o {output} > {log} 2$
         """

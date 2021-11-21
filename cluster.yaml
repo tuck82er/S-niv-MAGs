@@ -89,3 +89,9 @@ prodigal:
     time: 2400
     mem: 16 
     threads: 1
+
+concoct_binning:
+    queue: computeq
+    time: 720
+    mem: 32
+    threads: 16
